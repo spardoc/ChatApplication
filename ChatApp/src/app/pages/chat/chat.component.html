@@ -1,0 +1,12 @@
+<div class="chat-container">
+    <ul class="messages-list">
+      <li *ngFor="let message of messages">{{ message }}</li>
+    </ul>
+    <input
+    type="text"
+    [(ngModel)]="newMessage"
+    (keydown.enter)="sendMessage()"
+    placeholder="Escribe tu mensaje"
+    />
+    <button (click)="sendMessage()">Enviar</button>
+</div>
