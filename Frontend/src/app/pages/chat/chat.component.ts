@@ -8,15 +8,14 @@ import { SocketService } from 'src/app/services/socket.service';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
-  messages: string[] = [];
+  messages: { text: string, isLocal: boolean }[] = [];
   newMessage: string = '';
 
   constructor(private socketService: SocketService) {}
 
   ngOnInit(): void {
-    // Escucha los mensajes desde el servidor
     this.socketService.onNewMessage((message: string) => {
-      this.messages.push(message);
+      this.messages.push({ text: message, isLocal: false }); // Asumir que todos los mensajes entrantes no son locales
     });
   }
 
@@ -24,6 +23,7 @@ export class ChatComponent implements OnInit {
   sendMessage(): void {
     if (this.newMessage.trim()) {
       this.socketService.sendMessage(this.newMessage);
+      this.messages.push({ text: this.newMessage, isLocal: true }); // Marcar los mensajes enviados como locales
       this.newMessage = '';
     }
   }

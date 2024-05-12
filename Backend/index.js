@@ -19,10 +19,9 @@ io.on('connection', (socket) => {
     console.log(`Nuevo cliente conectado: ${socket.id}`);
 
   // Escucha mensajes de los clientes
-    socket.on('message', (message) => {
-    // Reenvía el mensaje a todos los clientes conectados
-    io.emit('message', message);
-    });
+  socket.on('message', (message) => {
+    socket.broadcast.emit('message', message);  // Emite a todos excepto al emisor
+  });
 
   // Detecta cuando un cliente se desconecta
     socket.on('disconnect', () => {

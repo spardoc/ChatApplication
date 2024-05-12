@@ -4,14 +4,7 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-}
-
-.messages-list {
-    list-style: none;
-    padding: 0;
-    max-height: 300px;
-    overflow-y: auto;
-    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif; /* Cambio de fuente para toda la interfaz */
 }
 
 .messages-list li {
@@ -19,14 +12,38 @@
     margin-bottom: 4px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    width: fit-content; /* Ajusta el ancho al contenido del mensaje */
+    max-width: 80%;    /* Limita el ancho máximo para evitar que ocupe todo el ancho */
+}
+
+.messages-list li.local {
+    margin-left: auto; /* Alinea a la derecha si es local */
+    background-color: #dcf8c6; /* Fondo diferenciado para los mensajes locales */
+}
+
+.messages-list li:not(.local) {
+    margin-right: auto; /* Alinea a la izquierda si no es local */
+    background-color: #f9f9f9; /* Fondo para mensajes no locales */
 }
 
 input[type="text"] {
     width: 80%;
     padding: 8px;
     margin-right: 10px;
+    border: 1px solid #ccc; /* Borde sutil para el input */
+    border-radius: 4px; /* Bordes redondeados para el input */
 }
 
 button {
     padding: 8px 12px;
+    background-color: #4CAF50; /* Color verde para el botón */
+    color: white; /* Texto blanco para mayor contraste */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor tipo pointer al pasar el mouse */
+    transition: background-color 0.3s; /* Transición suave del color */
+}
+
+button:hover {
+    background-color: #45a049; /* Color ligeramente más oscuro al pasar el mouse */
 }
