@@ -6,7 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
+  isMenuVisible: boolean = false;
   pages = [
     {title: 'Chat', path: 'pages/chat'}
   ]
+  rutaDinamica = 'pages/chat';
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  toggleMenu() {
+    this.isMenuVisible = !this.isMenuVisible;
+  }
+
+  cambiarRuta(nuevaRuta: string) {
+    this.rutaDinamica = nuevaRuta;
+}
 }

@@ -10,6 +10,7 @@ import { SocketService } from 'src/app/services/socket.service';
 export class ChatComponent implements OnInit {
   messages: { text: string, isLocal: boolean }[] = [];
   newMessage: string = '';
+  isDarkMode: boolean = false;  // Añadir esta línea
 
   constructor(private socketService: SocketService) {}
 
@@ -26,5 +27,8 @@ export class ChatComponent implements OnInit {
       this.messages.push({ text: this.newMessage, isLocal: true }); // Marcar los mensajes enviados como locales
       this.newMessage = '';
     }
+  }
+  toggleDarkMode(): void {  // Añadir este método
+    this.isDarkMode = !this.isDarkMode;
   }
 }
