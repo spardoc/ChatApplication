@@ -5,7 +5,7 @@ Cómo construir la imagen:
 Para construir la imagen de Docker para esta aplicación de chat, navegue al directorio donde se encuentra el Dockerfile y ejecute el siguiente comando en la terminal:
 
 ```bash 
-docker build -t nombre-de-tu-imagen ."
+docker build -t nombre-de-tu-imagen .
 ```
 ![Texto alternativo](img/build.jpg)
 
