@@ -19,3 +19,7 @@ Reemplace nombre-del-contenedor con el nombre que desea asignar al contenedor y 
 Cómo acceder y probar la funcionalidad del Chat:
 
 Para acceder a la interfaz de la aplicación de chat, abra un navegador web y visite http://localhost. Esto le llevará directamente a la interfaz de usuario de la aplicación de chat. Para probar la funcionalidad del chat: Abra varias pestañas o ventanas del navegador en http://localhost para simular múltiples usuarios. En cada pestaña o ventana, escriba mensajes en el cuadro de texto y envíelos. Observe que los mensajes enviados desde una pestaña aparecen en tiempo real en todas las otras pestañas abiertas. Esto confirma que la comunicación en tiempo real está funcionando a través de WebSockets."
+
+Funcionamiento
+![Texto alternativo](img/imagen.png)
+![Texto alternativo](img/contenedor.png)
