@@ -22,4 +22,4 @@ Para acceder a la interfaz de la aplicación de chat, abra un navegador web y vi
 
 Funcionamiento
 ![Texto alternativo](img/imagen.png)
-![Texto alternativo](img/contenedor.png)
+![Texto alternativo](img/Contenedor.png)
