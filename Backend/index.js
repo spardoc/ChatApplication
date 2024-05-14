@@ -16,8 +16,7 @@ app.use(express.static('public'));
 
 // Configura la conexión de Socket.IO
 io.on('connection', (socket) => {
-    console.log(`Nuevo cliente conectado: ${socket.id}`);
-
+  console.log(`Nuevo cliente conectado: ${socket.id}`);
   // Escucha mensajes de los clientes
   socket.on('message', (message) => {
     socket.broadcast.emit('message', message);  // Emite a todos excepto al emisor

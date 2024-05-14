@@ -10,6 +10,7 @@
     color: white;
     margin: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Courier New', Courier, monospace;
   }
   
   /* Estilos para el menú, suponiendo que app-menu será estilizado internamente o aquí según necesidades */
@@ -23,25 +24,7 @@
   /* El router-outlet generalmente no necesita estilos específicos, pero puedes agregar un padding si es necesario */
   router-outlet {
     padding: 20px;
-  }
-  
-  .container {
-
-    
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;  /* Asegura que el contenedor tenga al menos la altura de la ventana */
-    
-    width: 100%;
-    height: 100%;
-    --color: #a7b6fa;
-    background: linear-gradient(45deg, var(--color) 25%, transparent 25%) -50px 0,
-          linear-gradient(-45deg, var(--color) 25%, transparent 25%) -50px 0,
-          linear-gradient(45deg, transparent 75%, var(--color) 75%) -50px 0,
-          linear-gradient(-45deg, transparent 75%, var(--color) 75%) -50px 0;
-    background-color: #e5e5f7;
-    background-size: 10px 40px;
-  }
+  }   
   
   app-menu {
     display: block;

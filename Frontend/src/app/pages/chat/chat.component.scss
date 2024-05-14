@@ -96,6 +96,84 @@ input:focus[type="text"] {
  opacity: 0;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Asegura que el input esté al final */
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+}
+
+.messages-list {
+    overflow-y: auto; /* Permite scroll si los mensajes exceden el espacio disponible */
+    flex-grow: 1;
+}
+
+.messages-list li {
+    padding: 8px;
+    margin-bottom: 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: fit-content;
+    max-width: 80%;
+}
+
+.messages-list li.local {
+    margin-left: auto;
+    background-color: #dcf8c6;
+}
+
+.messages-list li:not(.local) {
+    margin-right: auto;
+    background-color: #f9f9f9;
+}
+
+.input-area {
+    display: flex;
+    justify-content: space-between; /* Alinea el input y el botón correctamente */
+    padding-top: 10px; /* Añade espacio arriba del input */
+}
+
+input[type="text"] {
+    flex-grow: 1; /* Hace que el input ocupe todo el espacio disponible excepto el botón */
+    margin-right: 10px; /* Añade espacio entre el input y el botón */
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    background: #e8e8e8;
+    box-shadow: 20px 20px 60px #c5c5c5, -20px -20px 60px #ffffff;
+    transition: 0.3s;
+}
+
+input:focus[type="text"] {
+    outline-color: #e8e8e8;
+    background: #e8e8e8;
+    box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
+}
+
+.button-container {
+    text-align: right;
+}
+
+.btn {
+    padding: 10px 30px;
+    border: 1px solid;
+    border-radius: 1000px;
+    transition: all .2s;
+}
 
 
 .chat-container {
