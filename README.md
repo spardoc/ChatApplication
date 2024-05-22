@@ -11,7 +11,7 @@ docker build -t nombre-de-tu-imagen .
 
 Reemplace nombre-de-tu-imagen con el nombre que desea asignar a la imagen de Docker.
 
-Cómo ejecutar la aplicación:
+Cómo ejecutar la aplicación
 
 Una vez construida la imagen, puede ejecutar la aplicación utilizando el siguiente comando:
 
