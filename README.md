@@ -1,4 +1,4 @@
-PRUEBA 1
+PRUEBA 1 Por Samuel Pardo
 
 Cómo construir la imagen:
 
