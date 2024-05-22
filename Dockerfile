@@ -1,3 +1,12 @@
+# Utilizar la imagen base de ubuntu
+FROM ubuntu:latest
+
+#Instala nginx como servidor web
+
+FROM nginx:latest
+COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/build /usr/share/nginx/html
+
 # Utilizar la imagen oficial de Node.js como imagen base
 FROM node:latest
 
@@ -34,8 +43,30 @@ RUN ng build --configuration production
 # Cambiar de nuevo al directorio del backend para la ejecución
 WORKDIR /usr/src/app/backend
 
-# Exponer el puerto 3000 para el servidor Node.js y el puerto 80 para el servidor web
+FROM nginx
+COPY Frontend/src/app/app.component.html /usr/share/nginx/html
+
+# Exponer el puerto 3000 para el servidor Node.js y el puerto 80 para el servidor Nginx
 EXPOSE 3000 80
 
-# Comando para ejecutar el servidor Node.js y servir la aplicación Angular
-CMD ["sh", "-c", "node index.js & npx http-server /usr/src/app/frontend/dist/chat-app -p 80"]
+FROM ubuntu:latest
+
+# Instalar Node.js y npm
+RUN apt-get update && \
+    apt-get install -y nodejs npm
+
+# Copiar el archivo del servidor Node.js
+COPY Backend/index.js /app/index.js
+
+# Establecer el directorio de trabajo
+WORKDIR /app
+
+# Instalar dependencias del proyecto, si las hay
+#COPY package.json /app/
+#RUN npm install
+
+# Exponer el puerto 3000
+EXPOSE 3000
+
+# Comando para iniciar el servidor Node.js
+CMD node index.js
